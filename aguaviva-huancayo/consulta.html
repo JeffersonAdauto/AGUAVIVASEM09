@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mis reportes · AguaViva Huancayo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/consulta.css">
+</head>
+
+<body>
+    <header>
+        <div class="marca"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2C12 2 5 10 5 15a7 7 0 0 0 14 0c0-5-7-13-7-13z" fill="currentColor" />
+            </svg><span>AguaViva Huancayo</span></div>
+        <nav><a href="index.html">Inicio</a><a href="registro.html">Reportar fuga</a><a href="consulta.html"
+                class="activo">Mis reportes</a><a href="pago.html">Pagar</a><a href="login.html" id="salir">Cerrar
+                sesión</a></nav>
+    </header>
+    <main>
+        <h1>Mis reportes de fuga</h1>
+        <section class="caja">
+            <h2><svg class="icono" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 12 9 17 20 6" fill="none" stroke-width="3" />
+                </svg>Resultados</h2>
+            <p id="error" class="error" role="alert" hidden></p>
+            <div class="tabla">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Dirección</th>
+                            <th>Descripción</th>
+                            <th>Estado</th>
+                            <th>Monto</th>
+                            <th>Pago</th>
+                            <th>Fecha</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="filas"></tbody>
+                </table>
+            </div>
+            <p id="vacio" hidden>Aún no tienes reportes. <a href="registro.html">Envía el primero</a>.</p>
+        </section>
+    </main>
+    <footer>AguaViva Huancayo · Diseño Web NRC 30239 · Jefferson Adauto Asmat</footer>
+    <script type="module" src="js/consulta/consulta.js"></script>
+</body>
+
+</html>

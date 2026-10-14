@@ -1,0 +1,101 @@
+:root{--ink:#222;--blue:#1a5fb4;--green:#2e7d32;--bg:#f3f7fb;--line:#d5dde6;--ease:cubic-bezier(.34,1.56,.64,1);--soft:cubic-bezier(.25,1,.5,1)}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+header{background:linear-gradient(-45deg,var(--ink),var(--green),#16324a,var(--blue));background-size:400% 400%;animation:grad 10s ease infinite;color:#fff;padding:14px 5%;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+.marca{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.2rem}
+.marca svg{width:30px;height:30px;transform-origin:bottom center;animation:sway 2s ease-in-out infinite}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{position:relative;color:#fff;text-decoration:none;padding:4px 0}
+nav a::after{content:"";position:absolute;left:50%;bottom:0;width:0;height:3px;background:#fff;transition:width .3s var(--soft),left .3s var(--soft)}
+nav a:hover::after,nav a.activo::after{width:100%;left:0}
+main{max-width:980px;margin:32px auto;padding:0 5%}
+h1{margin:0 0 6px;font-size:1.8rem}
+.btn{display:inline-block;background:var(--blue);color:#fff;border:0;border-radius:8px;padding:10px 20px;font:inherit;font-weight:600;cursor:pointer;text-decoration:none;transition:background-color .3s ease,transform .1s ease}
+.btn:hover{background:var(--ink)}.btn:active{transform:scale(.96)}
+.caja{background:#fff;border-radius:12px;padding:24px;margin-top:20px;box-shadow:0 10px 30px rgba(0,0,0,.06),0 1px 3px rgba(0,0,0,.04);transition:box-shadow .3s ease}
+.caja:hover{box-shadow:0 18px 40px rgba(0,0,0,.14)}
+label{display:block;font-weight:600;margin-top:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;font:inherit;margin-top:4px}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--blue);border-color:var(--blue)}
+form .btn{margin-top:18px}
+.exito,.error{margin-top:16px;padding:10px 14px;border-radius:8px}
+.exito{background:#e6f4e7;color:#1b5e20;animation:pop .4s var(--ease) forwards}
+.error{background:#fdeaea;color:#a12622}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.tabla{overflow-x:auto}
+.estado{padding:2px 10px;border-radius:99px;background:#e3edf9;color:var(--blue);font-size:.85rem}
+footer{text-align:center;padding:24px;color:#666;font-size:.9rem}
+@keyframes grad{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes sway{0%,100%{transform:scale(1) rotate(0)}25%{transform:scale(1.08) rotate(-4deg)}75%{transform:scale(1.08) rotate(4deg)}}
+@keyframes pop{0%{transform:scale(.5);opacity:0}15%{transform:scale(1.1);opacity:1}25%{transform:scale(1);opacity:1}}
+@keyframes fade{from{opacity:0;filter:blur(6px);transform:translateY(20px) scale(.97)}to{opacity:1;filter:blur(0);transform:none}}
+
+.icono{width:28px;height:28px;vertical-align:middle;margin-right:8px}
+.icono path{stroke:var(--green);stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset .7s ease-in-out}
+.caja:hover .icono path{stroke-dashoffset:0}
+
+/* ===== Tema agua oscuro con acento neón (propio de esta página) ===== */
+body{color:#e8f6fb;min-height:100vh;background:radial-gradient(1000px 520px at 10% -8%,#0f5a7a 0,transparent 62%),radial-gradient(800px 460px at 100% 30%,#0b4466 0,transparent 58%),radial-gradient(700px 400px at 0% 100%,#0a3a4f 0,transparent 60%),linear-gradient(180deg,#04131f,#062a3d 55%,#04131f);background-attachment:fixed}
+header{background:linear-gradient(-45deg,#04131f,#0b6e5f,#16324a,#1a5fb4);background-size:400% 400%;border-bottom:1px solid #1d4a63}
+.marca{color:#3df2e0;text-shadow:0 0 12px rgba(61,242,224,.55)}
+nav a.activo{color:#3df2e0}nav a::after{background:#3df2e0;box-shadow:0 0 8px #3df2e0}
+a{color:#3df2e0}
+.caja,.hero,.tarjeta{background:rgba(10,42,61,.62);border:1px solid #1d4a63;color:#e8f6fb}
+.caja:hover,.tarjeta:hover{box-shadow:0 0 26px rgba(61,242,224,.2)}
+input,textarea,select{background:rgba(4,19,31,.75);color:#e8f6fb;border-color:#1d4a63}
+input:focus,textarea:focus,select:focus{outline:2px solid #3df2e0;border-color:#3df2e0}
+.btn{background:#3df2e0;color:#032;box-shadow:0 0 16px rgba(61,242,224,.4)}.btn:hover{background:#fff;color:#032}
+.exito{background:#0b3a33;color:#9ff5e9}.error{background:#3f1620;color:#ffb4bd}
+th,td{border-bottom-color:#1d4a63}.estado{background:rgba(61,242,224,.15);color:#3df2e0}
+td button{background:transparent;color:#e8f6fb}td button.borrar{color:#ffb4bd;border-color:#7a2f3b}
+.pestanas button{background:rgba(4,19,31,.75);color:#e8f6fb;border-color:#1d4a63}
+.pestanas button.activa{background:#3df2e0;color:#032;border-color:#3df2e0}
+footer{color:#7fa6b8}
+
+/* ===== CSS3 avanzado: burbujas, vidrio, 3D, brillo, transiciones entre páginas ===== */
+@view-transition{navigation:auto}
+html{scroll-behavior:smooth}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+ background-image:radial-gradient(circle at 20% 80%,transparent 0 5px,rgba(61,242,224,.35) 6px 7px,rgba(61,242,224,.07) 8px 14px,transparent 15px),radial-gradient(circle at 70% 40%,transparent 0 8px,rgba(31,182,212,.3) 9px 10px,rgba(31,182,212,.06) 11px 20px,transparent 21px),radial-gradient(circle at 45% 15%,transparent 0 4px,rgba(255,255,255,.25) 5px 6px,transparent 7px);
+ background-size:300px 300px,420px 420px,520px 520px;animation:burbujas 45s linear infinite}
+@keyframes burbujas{to{background-position:0 -300px,0 -420px,0 -520px}}
+@keyframes brillo{to{background-position:300% 0}}
+@keyframes entra{from{opacity:0;transform:translateY(24px) scale(.97);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+@keyframes latido{50%{box-shadow:0 0 0 7px rgba(61,242,224,0)}}
+@keyframes ola{to{background-position-x:600px}}
+header{backdrop-filter:blur(12px) saturate(150%);position:sticky;top:0;z-index:5}
+.marca svg{filter:drop-shadow(0 0 8px #3df2e0)}
+h1{background:linear-gradient(90deg,#fff,#3df2e0,#1fb6d4,#fff);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:brillo 9s linear infinite}
+.caja,.hero,.tarjeta{backdrop-filter:blur(10px) saturate(140%);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 12px 32px rgba(0,0,0,.35);animation:entra .8s var(--soft) both}
+.tarjeta{transform-style:preserve-3d}.tarjeta:nth-child(2){animation-delay:.12s}.tarjeta:nth-child(3){animation-delay:.24s}
+.tarjeta:hover{transform:perspective(800px) rotateX(5deg) rotateY(-5deg) translateY(-8px)}
+.btn{position:relative;overflow:hidden;animation:latido 2.6s ease-in-out infinite}
+.btn::after{content:"";position:absolute;top:0;bottom:0;left:-80%;width:50%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent);transform:skewX(-20deg);transition:left .6s ease}
+.btn:hover::after{left:130%}.btn:hover{transform:translateY(-2px)}
+input,textarea,select{transition:box-shadow .3s,border-color .3s}
+input:focus,textarea:focus,select:focus{box-shadow:0 0 0 4px rgba(61,242,224,.2),0 0 18px rgba(61,242,224,.35)}
+tbody tr{transition:background .25s,transform .25s;animation:entra .5s ease both}
+tbody tr:hover{background:rgba(61,242,224,.09);transform:translateX(4px)}
+tbody tr:nth-child(2){animation-delay:.05s}tbody tr:nth-child(3){animation-delay:.1s}tbody tr:nth-child(4){animation-delay:.15s}tbody tr:nth-child(5){animation-delay:.2s}
+.estado{transition:transform .25s}.estado:hover{transform:scale(1.1)}
+.estado[data-estado=registrado]{background:rgba(255,196,61,.18);color:#ffc43d}
+.estado[data-estado=atendido]{background:rgba(61,242,150,.16);color:#3df296}
+.estado[data-estado=rechazado]{background:rgba(255,100,120,.16);color:#ff8095}
+.estado-bd{display:inline-block;padding:4px 12px;border-radius:99px;background:rgba(255,255,255,.08);font-size:.85rem}
+.estado-bd[data-ok=si]{background:rgba(61,242,150,.16);color:#3df296}.estado-bd[data-ok=no]{background:rgba(255,100,120,.16);color:#ff8095}
+button:disabled{opacity:.45;cursor:not-allowed}
+@supports (animation-timeline:view()){.tarjeta,.caja{animation:entra linear both;animation-timeline:view();animation-range:entry 0% cover 28%}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+.estado[data-estado=pendiente]{background:rgba(255,196,61,.18);color:#ffc43d}
+.estado[data-estado=pagado],.estado[data-estado=aprobado]{background:rgba(61,242,150,.16);color:#3df296}
+.estado[data-estado=exonerado]{background:rgba(31,182,212,.18);color:#1fb6d4}
+fieldset{border:1px solid #1d4a63;border-radius:12px;margin:12px 0}legend{padding:0 8px;color:#3df2e0}
+fieldset label{display:inline-block;margin-right:16px}
+output,#resumen-monto,#total-dia{color:#3df2e0;font-weight:700;text-shadow:0 0 10px rgba(61,242,224,.5)}
+dialog{background:#0a2a3d;color:#e8f6fb;border:1px solid #3df2e0;border-radius:18px;box-shadow:0 0 40px rgba(61,242,224,.3);animation:entra .4s both}
+dialog::backdrop{background:rgba(0,0,0,.65);backdrop-filter:blur(4px)}
+.acciones{margin-top:16px;display:flex;gap:16px;align-items:center}
+
+@media print{header,nav,footer,.acciones,.fondo{display:none}body{background:#fff;color:#000}body::before{display:none}#comprobante{background:#fff;color:#000;border:1px solid #000;padding:1rem;box-shadow:none}h1{color:#000;background:none;-webkit-text-fill-color:#000}}

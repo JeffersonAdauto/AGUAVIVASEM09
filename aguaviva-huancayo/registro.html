@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reportar fuga · AguaViva Huancayo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/registro.css">
+</head>
+
+<body>
+    <header>
+        <div class="marca"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2C12 2 5 10 5 15a7 7 0 0 0 14 0c0-5-7-13-7-13z" fill="currentColor" />
+            </svg><span>AguaViva Huancayo</span></div>
+        <nav><a href="index.html">Inicio</a><a href="registro.html" class="activo">Reportar fuga</a><a
+                href="consulta.html">Mis reportes</a><a href="pago.html">Pagar</a><a href="login.html" id="salir">Cerrar
+                sesión</a></nav>
+    </header>
+    <main>
+        <h1>Reporte de fuga</h1>
+        <form id="form-reporte" class="caja" novalidate>
+            <label for="nombre_vecino">Nombre del vecino</label>
+            <input id="nombre_vecino" name="nombre_vecino" type="text" required>
+            <label for="direccion">Dirección de la fuga</label>
+            <input id="direccion" name="direccion" type="text" required>
+            <label for="descripcion">Descripción</label>
+            <textarea id="descripcion" name="descripcion" required></textarea>
+            <label for="imagen_url">Enlace de una foto (opcional)</label>
+            <input id="imagen_url" name="imagen_url" type="url" placeholder="https://...">
+            <label for="diametro_pulg">Diámetro de la tubería (pulgadas)</label>
+            <input id="diametro_pulg" name="diametro_pulg" type="number" min="0.25" max="48" step="0.25" value="0.5"
+                required>
+            <fieldset>
+                <legend>Zona</legend>
+                <label><input type="radio" name="zona" value="urbana" checked> Urbana</label>
+                <label><input type="radio" name="zona" value="rural"> Rural (+ S/ 25.00)</label>
+            </fieldset>
+            <p>Tasa de inspección estimada: <output id="monto-estimado" for="form-reporte" aria-live="polite">S/
+                    20.00</output></p>
+            <button class="btn" type="submit">Enviar reporte y pagar</button>
+            <p id="exito" class="exito" role="status" hidden></p>
+            <p id="error" class="error" role="alert" hidden></p>
+        </form>
+    </main>
+    <footer>AguaViva Huancayo · Diseño Web NRC 30239 · Jefferson Adauto Asmat</footer>
+    <script type="module" src="js/registro/registro.js"></script>
+</body>
+
+</html>

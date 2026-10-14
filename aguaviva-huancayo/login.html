@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ingresar · AguaViva Huancayo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <header>
+        <div class="marca"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2C12 2 5 10 5 15a7 7 0 0 0 14 0c0-5-7-13-7-13z" fill="currentColor" />
+            </svg><span>AguaViva Huancayo</span></div>
+        <nav><a href="index.html">Inicio</a><a href="registro.html">Reportar fuga</a><a href="consulta.html">Mis
+                reportes</a><a href="panel.html">Panel</a><a href="login.html" class="activo">Ingresar</a></nav>
+    </header>
+    <main>
+        <h1>Accede a tu cuenta</h1>
+        <p id="estado-bd" class="estado-bd">Comprobando conexión con Neon…</p>
+        <div class="caja">
+            <div class="pestanas"><button type="button" id="tab-login" class="activa">Iniciar sesión</button><button
+                    type="button" id="tab-crear">Crear cuenta</button></div>
+            <form id="form-login">
+                <label for="l-correo">Correo</label><input id="l-correo" type="email" required>
+                <label for="l-clave">Contraseña</label><input id="l-clave" type="password" required>
+                <button class="btn" type="submit">Entrar</button>
+            </form>
+            <form id="form-crear" hidden>
+                <label for="c-nombre">Nombre completo</label><input id="c-nombre" type="text" required>
+                <label for="c-correo">Correo</label><input id="c-correo" type="email" required>
+                <label for="c-clave">Contraseña (mínimo 4 caracteres)</label><input id="c-clave" type="password"
+                    minlength="4" required>
+                <button class="btn" type="submit">Crear cuenta</button>
+            </form>
+            <p id="exito" class="exito" role="status" hidden></p>
+            <p id="error" class="error" role="alert" hidden></p>
+        </div>
+    </main>
+    <footer>AguaViva Huancayo · Diseño Web NRC 30239 · Jefferson Adauto Asmat</footer>
+    <script type="module" src="js/auth/login.js"></script>
+</body>
+
+</html>
